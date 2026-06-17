@@ -3,30 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Run App') {
             steps {
-                echo 'Checking workspace...'
-                sh 'pwd'
-                sh 'ls -la'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building Application'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running Tests'
-                sh 'python3 --version'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deployment Successful'
+                sh 'python3 app.py'
             }
         }
     }
